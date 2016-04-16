@@ -1,24 +1,36 @@
-.weather-data {
-    background-color: red;
+.current-weather {
+    display: flex;
+    flex-direction: column;
+
+    .current-weather-top {
+        display: flex;
+        flex-direction: row;
+        height: 50%;
+
+
+        .current-weather-icon {
+            width: 50%;
+            background-color: #3498db;
+        }
+
+        .current-weather-temperature {
+            width: 50%;
+            background-color: #16a085;
+        }
+    }
+
+    .current-weather-bottom {
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        .current-weather-text {
+            width: 100%;
+            clear: both;
+            height: 300px;
+            background-color: #ecf0f1;
+        }
+    }
+
+
 }
 
-.current-weather-icon {
-    height: 300px;
-    width: 50%;
-    float: left;
-    background-color: #3498db;
-}
-
-.current-weather-temperature {
-    height: 300px;
-    width: 50%;
-    float: left;
-    background-color: #16a085;
-}
-
-.current-weather-text {
-    width: 100%;
-    clear: both;
-    height: 300px;
-    background-color: #ecf0f1;
-}
