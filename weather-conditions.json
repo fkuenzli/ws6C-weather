@@ -1,0 +1,296 @@
+{
+	"codes": [
+		{
+			"id": 200,
+			"value": "thunderstorm with light rain"
+		},
+		{
+			"id": 201,
+			"value": "thunderstorm with rain"
+		},
+		{
+			"id": 202,
+			"value": "thunderstorm with heavy rain"
+		},
+		{
+			"id": 210,
+			"value": "light thunderstorm"
+		},
+		{
+			"id": 211,
+			"value": "thunderstorm"
+		},
+		{
+			"id": 212,
+			"value": "heavy thunderstorm"
+		},
+		{
+			"id": 221,
+			"value": "ragged thunderstorm"
+		},
+		{
+			"id": 230,
+			"value": "thunderstorm with light drizzle"
+		},
+		{
+			"id": 231,
+			"value": "thunderstorm with drizzle"
+		},
+		{
+			"id": 232,
+			"value": "thunderstorm with heavy drizzle"
+		},
+		{
+			"id": 300,
+			"value": "light intensity drizzle"
+		},
+		{
+			"id": 301,
+			"value": "drizzle"
+		},
+		{
+			"id": 302,
+			"value": "heavy intensity drizzle"
+		},
+		{
+			"id": 310,
+			"value": "light intensity drizzle rain"
+		},
+		{
+			"id": 311,
+			"value": "drizzle rain"
+		},
+		{
+			"id": 312,
+			"value": "heavy intensity drizzle rain"
+		},
+		{
+			"id": 313,
+			"value": "shower rain and drizzle"
+		},
+		{
+			"id": 314,
+			"value": "heavy shower rain and drizzle"
+		},
+		{
+			"id": 321,
+			"value": "shower drizzle"
+		},
+		{
+			"id": 500,
+			"value": "light rain"
+		},
+		{
+			"id": 501,
+			"value": "moderate rain"
+		},
+		{
+			"id": 502,
+			"value": "heavy intensity rain "
+		},
+		{
+			"id": 503,
+			"value": "very heavy rain"
+		},
+		{
+			"id": 504,
+			"value": "extreme rain"
+		},
+		{
+			"id": 511,
+			"value": "freezing rain"
+		},
+		{
+			"id": 520,
+			"value": "light intensity shower rain "
+		},
+		{
+			"id": 521,
+			"value": "shower rain"
+		},
+		{
+			"id": 522,
+			"value": "heavy intensity shower rain"
+		},
+		{
+			"id": 531,
+			"value": "ragged shower rain"
+		},
+		{
+			"id": 600,
+			"value": "light snow"
+		},
+		{
+			"id": 601,
+			"value": "snow"
+		},
+		{
+			"id": 602,
+			"value": "heavy snow"
+		},
+		{
+			"id": 611,
+			"value": "sleet"
+		},
+		{
+			"id": 612,
+			"value": "shower sleet"
+		},
+		{
+			"id": 615,
+			"value": "light rain and snow"
+		},
+		{
+			"id": 616,
+			"value": "rain and snow"
+		},
+		{
+			"id": 620,
+			"value": "light shower snow"
+		},
+		{
+			"id": 621,
+			"value": "shower snow"
+		},
+		{
+			"id": 622,
+			"value": "heavy shower snow"
+		},
+		{
+			"id": 701,
+			"value": "mist"
+		},
+		{
+			"id": 711,
+			"value": "smoke"
+		},
+		{
+			"id": 721,
+			"value": "haze"
+		},
+		{
+			"id": 731,
+			"value": "sand, dust whirls"
+		},
+		{
+			"id": 741,
+			"value": "fog "
+		},
+		{
+			"id": 751,
+			"value": "sand "
+		},
+		{
+			"id": 761,
+			"value": "dust "
+		},
+		{
+			"id": 762,
+			"value": "volcanic ash "
+		},
+		{
+			"id": 771,
+			"value": "squalls "
+		},
+		{
+			"id": 781,
+			"value": "tornado"
+		},
+		{
+			"id": 800,
+			"value": "clear sky"
+		},
+		{
+			"id": 801,
+			"value": "few clouds "
+		},
+		{
+			"id": 802,
+			"value": "scattered clouds "
+		},
+		{
+			"id": 803,
+			"value": "broken clouds "
+		},
+		{
+			"id": 804,
+			"value": "overcast clouds "
+		},
+		{
+			"id": 900,
+			"value": "tornado"
+		},
+		{
+			"id": 901,
+			"value": "tropical storm"
+		},
+		{
+			"id": 902,
+			"value": "hurricane"
+		},
+		{
+			"id": 903,
+			"value": "cold"
+		},
+		{
+			"id": 904,
+			"value": "hot"
+		},
+		{
+			"id": 905,
+			"value": "windy"
+		},
+		{
+			"id": 906,
+			"value": "hail"
+		},
+		{
+			"id": 951,
+			"value": "calm"
+		},
+		{
+			"id": 952,
+			"value": "light breeze"
+		},
+		{
+			"id": 953,
+			"value": "gentle breeze"
+		},
+		{
+			"id": 954,
+			"value": "moderate breeze "
+		},
+		{
+			"id": 955,
+			"value": "fresh breeze"
+		},
+		{
+			"id": 956,
+			"value": "strong breeze"
+		},
+		{
+			"id": 957,
+			"value": "high wind, near gale"
+		},
+		{
+			"id": 958,
+			"value": "gale"
+		},
+		{
+			"id": 959,
+			"value": "severe gale"
+		},
+		{
+			"id": 960,
+			"value": "storm"
+		},
+		{
+			"id": 961,
+			"value": "violent storm"
+		},
+		{
+			"id": 962,
+			"value": "hurricane"
+		}
+	]
+}
