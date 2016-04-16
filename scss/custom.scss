@@ -1,3 +1,24 @@
 .weather-data {
     background-color: red;
 }
+
+.current-weather-icon {
+    height: 300px;
+    width: 50%;
+    float: left;
+    background-color: #3498db;
+}
+
+.current-weather-temperature {
+    height: 300px;
+    width: 50%;
+    float: left;
+    background-color: #16a085;
+}
+
+.current-weather-text {
+    width: 100%;
+    clear: both;
+    height: 300px;
+    background-color: #ecf0f1;
+}
