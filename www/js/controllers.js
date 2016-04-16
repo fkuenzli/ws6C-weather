@@ -24,8 +24,12 @@ angular.module( 'starter.controllers', [] )
 
     $scope.parseData = function () {
       if ( weatherData !== undefined ) {
-        var weather = weatherData[ 'weather' ][ 0 ][ 'main' ];
-        console.log( weather );
+        var weatherAsName = weatherData['weather'][0]['main'];
+        var temp = weatherData['main']['temp'];
+        var location = weatherData['name']
+        console.log(weatherAsName);
+        console.log(temp + " Grad Celcius");
+        console.log("Du bist in " + location);
       } else {
         console.log( 'Error parsing data!' );
       }
