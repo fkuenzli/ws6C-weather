@@ -35,7 +35,7 @@ angular.module('starter.controllers', [])
       if (weatherData !== undefined) {
 
         var temperature = weatherData['main']['temp'];
-        temperature = "33";
+        temperature = "31";
 
 
         $scope.current_weather_temp = temperature + "°";
@@ -115,7 +115,7 @@ var getTextAccordingTemparature = function (temperature) {
   ];
 
   var textsAboveThirty = [
-    'Zieh deine Kleider aus oder suche Schatten!'
+    'Zieh deine Kleider aus!'
   ];
 
 
