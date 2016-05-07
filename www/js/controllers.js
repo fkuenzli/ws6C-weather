@@ -7,8 +7,7 @@ angular.module('starter.controllers', [])
 
     var weatherData; // Object
 
-    $scope.$on("$ionicView.loaded", function() {
-
+    $scope.$on("$ionicView.loaded", function () {
 
 
     });
@@ -34,12 +33,19 @@ angular.module('starter.controllers', [])
 
     $scope.parseData = function () {
       if (weatherData !== undefined) {
-        $scope.current_weather_temp = weatherData['main']['temp'] + "°";
+
+        var temperature = weatherData['main']['temp'];
+        temperature = "33";
+
+
+        $scope.current_weather_temp = temperature + "°";
         $scope.current_weather_location = weatherData['name'];
         //$scope.current_weather_condition = weatherData['weather'][0]['main'];
         icon = weatherData['weather'][0]['icon'];
         $scope.current_weather_icon = "http://openweathermap.org/img/w/" + icon + ".png";
-        $scope.current_weather_text = getTextAccordingTemparature(weatherData['main']['temp']);
+        $scope.current_weather_icon_ionic = getIconAccordingTemperature(temperature);
+        $scope.current_weather_text = getTextAccordingTemparature(temperature);
+
 
         //console.log(current_weather_condition);
         console.log(current_weather_temp + " Grad Celcius");
@@ -54,10 +60,10 @@ angular.module('starter.controllers', [])
     var color = getRandomColor();
 
     console.log(color);
-    console.log(shadeColor2(color,-0,2));
+    console.log(shadeColor2(color, -0, 2));
 
     $scope.hueValue = color;
-    $scope.hueValueDark = shadeColor2(color,-0.2);
+    $scope.hueValueDark = shadeColor2(color, -0.2);
 
   })
 
@@ -89,58 +95,80 @@ angular.module('starter.controllers', [])
   .controller('RequestCtrl', function ($scope) {
   });
 
-  var getTextAccordingTemparature = function(temperature) {
+var getTextAccordingTemparature = function (temperature) {
 
-    var textsBelowZero = [
-      'Eiskalt!',
-      'Springt dein Auto noch an?!'
-    ];
+  var textsBelowZero = [
+    'Eiskalt!',
+    'Springt dein Auto noch an?!'
+  ];
 
-    var textsZeroToTen = [
-      'Zieh dich warm an!'
-    ];
+  var textsZeroToTen = [
+    'Zieh dich warm an!'
+  ];
 
-    var textsTenToTwenty = [
-      'Mal so, mal so!'
-    ];
+  var textsTenToTwenty = [
+    'Mal so, mal so!'
+  ];
 
-    var textsTwentyToThirty= [
-      'Lasse deine Jacke zuhause!'
-    ];
+  var textsTwentyToThirty = [
+    'Lass\' deine Jacke zuhause!'
+  ];
 
-    var textsAboveThirty= [
-      'Zieh deine Kleider aus oder suche Schatten!'
-    ];
+  var textsAboveThirty = [
+    'Zieh deine Kleider aus oder suche Schatten!'
+  ];
 
 
-
-    if( temperature <= 0 ) {
-      var randomNumber = Math.floor(Math.random()*textsBelowZero.length);
-      return textsBelowZero[randomNumber];
-    }
-
-    else if ( temperature <= 10 ) {
-      var randomNumber = Math.floor(Math.random()*textsZeroToTen.length);
-      return textsZeroToTen[randomNumber];
-    }
-
-    else if ( temperature <= 20 ) {
-      var randomNumber = Math.floor(Math.random()*textsTenToTwenty.length);
-      return textsTenToTwenty[randomNumber];
-    }
-
-    else if ( temperature <= 30 ) {
-      var randomNumber = Math.floor(Math.random()*textsTwentyToThirty.length);
-      return textsTwentyToThirty[randomNumber];
-    }
-
-    else {
-      var randomNumber = Math.floor(Math.random()*textsAboveThirty.length);
-      return textsAboveThirty[randomNumber];
-    }
+  if (temperature <= 0) {
+    var randomNumber = Math.floor(Math.random() * textsBelowZero.length);
+    return textsBelowZero[randomNumber];
   }
 
-var getRandomColor = function() {
+  else if (temperature <= 10) {
+    var randomNumber = Math.floor(Math.random() * textsZeroToTen.length);
+    return textsZeroToTen[randomNumber];
+  }
+
+  else if (temperature <= 20) {
+    var randomNumber = Math.floor(Math.random() * textsTenToTwenty.length);
+    return textsTenToTwenty[randomNumber];
+  }
+
+  else if (temperature <= 30) {
+    var randomNumber = Math.floor(Math.random() * textsTwentyToThirty.length);
+    return textsTwentyToThirty[randomNumber];
+  }
+
+  else {
+    var randomNumber = Math.floor(Math.random() * textsAboveThirty.length);
+    return textsAboveThirty[randomNumber];
+  }
+}
+
+var getIconAccordingTemperature = function (temperature) {
+  if (temperature <= 0) {
+    return "ion-ios-snowy";
+  }
+
+  else if (temperature <= 10) {
+    return "ion-ios-snowy";
+  }
+
+  else if (temperature <= 20) {
+    return "ion-ios-cloudy-outline";
+  }
+
+  else if (temperature <= 30) {
+    return "ion-ios-sunny";
+  }
+
+  else {
+    return "ion-ios-sunny";
+  }
+}
+
+
+var getRandomColor = function () {
   var colors = [
     '#1abc9c',
     '#2ecc71',
@@ -160,16 +188,16 @@ var getRandomColor = function() {
     '#c0392b'
   ]
 
-  return colors[Math.floor(Math.random()*colors.length)];
+  return colors[Math.floor(Math.random() * colors.length)];
 
 }
 
 function shadeRGBColor(color, percent) {
-  var f=color.split(","),t=percent<0?0:255,p=percent<0?percent*-1:percent,R=parseInt(f[0].slice(4)),G=parseInt(f[1]),B=parseInt(f[2]);
-  return "rgb("+(Math.round((t-R)*p)+R)+","+(Math.round((t-G)*p)+G)+","+(Math.round((t-B)*p)+B)+")";
+  var f = color.split(","), t = percent < 0 ? 0 : 255, p = percent < 0 ? percent * -1 : percent, R = parseInt(f[0].slice(4)), G = parseInt(f[1]), B = parseInt(f[2]);
+  return "rgb(" + (Math.round((t - R) * p) + R) + "," + (Math.round((t - G) * p) + G) + "," + (Math.round((t - B) * p) + B) + ")";
 }
 
 function shadeColor2(color, percent) {
-  var f=parseInt(color.slice(1),16),t=percent<0?0:255,p=percent<0?percent*-1:percent,R=f>>16,G=f>>8&0x00FF,B=f&0x0000FF;
-  return "#"+(0x1000000+(Math.round((t-R)*p)+R)*0x10000+(Math.round((t-G)*p)+G)*0x100+(Math.round((t-B)*p)+B)).toString(16).slice(1);
+  var f = parseInt(color.slice(1), 16), t = percent < 0 ? 0 : 255, p = percent < 0 ? percent * -1 : percent, R = f >> 16, G = f >> 8 & 0x00FF, B = f & 0x0000FF;
+  return "#" + (0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
 }

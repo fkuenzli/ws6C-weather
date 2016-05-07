@@ -9755,6 +9755,9 @@ a.button {
       align-items: center;
       justify-content: center;
       width: 50%; }
+      .current-weather .current-weather-top-wrapper .current-weather-top-2 .current-weather-icon {
+        color: #ffffff;
+        font-size: 7rem; }
     .current-weather .current-weather-top-wrapper .current-weather-top-3 {
       display: flex;
       align-items: center;
@@ -9763,15 +9766,12 @@ a.button {
       width: 50%; }
       .current-weather .current-weather-top-wrapper .current-weather-top-3 .current-weather-temperature {
         font-family: 'Dosis', sans-serif;
-        font-size: 3rem;
-        line-height: 3rem;
+        font-size: 4.5rem;
+        line-height: 4.5rem;
         font-weight: 700;
         color: #ffffff; }
   .current-weather .current-weather-bottom {
-    flex-grow: 1;
-    /*display: flex;
-        flex-direction: column;
-        height: 50%;*/ }
+    flex-grow: 1; }
     .current-weather .current-weather-bottom .current-weather-text {
       font-family: 'Dosis', sans-serif;
       font-size: 5.5rem;
