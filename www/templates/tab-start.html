@@ -7,12 +7,12 @@
       </div>
 
       <div style="display: flex;flex-direction:row;">
-        <div class="current-weather-top-2">
+        <div class="current-weather-top-2" ng-style="{'background-color':hueValueDark}">
           <div class="current-weather-icon">
             <img ng-src="{{current_weather_icon}}"/>
           </div>
         </div>
-        <div class="current-weather-top-3">
+        <div class="current-weather-top-3" ng-style="{'background-color':hueValueDark}">
           <div class="current-weather-temperature">{{current_weather_temp}}</div>
         </div>
       </div>
@@ -22,7 +22,7 @@
     <div class="current-weather-bottom">
       <div class="current-weather-text"></div>
 
-      <div class="current-weather-text padding">Shave your armpits.{{current_weather_text}}</div>
+      <div class="current-weather-text padding">{{current_weather_text}}</div>
       <a href="#" ng-click="getData()">Get Weather Data</a><br/>
       <a href="#" ng-click="parseData()">ParseData</a>
     </div>

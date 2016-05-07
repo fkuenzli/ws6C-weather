@@ -12,7 +12,6 @@
         .current-weather-top-1 {
             display: flex;
             min-height: 100px;
-            background-color: #ecf0f1;
             align-items: center;
 
             .current-weather-location {
@@ -20,6 +19,7 @@
                 font-size: 3rem;
                 line-height: 3rem;
                 font-weight: 300;
+                color: #ffffff;
             }
         }
 
@@ -28,7 +28,6 @@
             align-items: center;
             justify-content: center;
             width: 50%;
-            background-color: #2e8ece;
         }
 
         .current-weather-top-3 {
@@ -37,7 +36,6 @@
             justify-content: center;
             min-height: 150px;
             width: 50%;
-            background-color: #2e8ece;
 
 
             .current-weather-temperature {
@@ -69,9 +67,10 @@
         height: 50%;*/
         .current-weather-text {
             font-family: 'Dosis', sans-serif;
-            font-size: 4.5rem;
-            line-height: 4.5rem;
+            font-size: 5.5rem;
+            line-height: 5.5rem;
             font-weight: 700;
+            color: #ffffff;
         }
     }
 
