@@ -9733,23 +9733,49 @@ a.button {
 
 .current-weather {
   display: flex;
-  flex-direction: column; }
-  .current-weather .current-weather-top {
-    display: flex;
-    flex-direction: row;
-    height: 50%; }
-    .current-weather .current-weather-top .current-weather-icon {
+  flex-direction: column;
+  height: 100%; }
+  .current-weather .current-weather-top-wrapper {
+    flex-grow: 1;
+    /*display: flex;
+        flex-direction: row;
+        height: 50%;*/ }
+    .current-weather .current-weather-top-wrapper .current-weather-top-1 {
+      display: flex;
+      min-height: 100px;
+      background-color: #ecf0f1;
+      align-items: center; }
+      .current-weather .current-weather-top-wrapper .current-weather-top-1 .current-weather-location {
+        font-family: 'Dosis', sans-serif;
+        font-size: 3rem;
+        line-height: 3rem;
+        font-weight: 300; }
+    .current-weather .current-weather-top-wrapper .current-weather-top-2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 50%;
-      background-color: #3498db; }
-    .current-weather .current-weather-top .current-weather-temperature {
+      background-color: #2e8ece; }
+    .current-weather .current-weather-top-wrapper .current-weather-top-3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 150px;
       width: 50%;
-      background-color: #16a085; }
+      background-color: #2e8ece; }
+      .current-weather .current-weather-top-wrapper .current-weather-top-3 .current-weather-temperature {
+        font-family: 'Dosis', sans-serif;
+        font-size: 3rem;
+        line-height: 3rem;
+        font-weight: 700;
+        color: #ffffff; }
   .current-weather .current-weather-bottom {
-    display: flex;
-    flex-direction: column;
-    height: 50%; }
+    flex-grow: 1;
+    /*display: flex;
+        flex-direction: column;
+        height: 50%;*/ }
     .current-weather .current-weather-bottom .current-weather-text {
-      width: 100%;
-      clear: both;
-      height: 300px;
-      background-color: #ecf0f1; }
+      font-family: 'Dosis', sans-serif;
+      font-size: 4.5rem;
+      line-height: 4.5rem;
+      font-weight: 700; }

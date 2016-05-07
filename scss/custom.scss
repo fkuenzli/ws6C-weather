@@ -1,33 +1,77 @@
 .current-weather {
     display: flex;
     flex-direction: column;
+    height: 100%;
 
-    .current-weather-top {
-        display: flex;
+    .current-weather-top-wrapper {
+        flex-grow: 1;
+        /*display: flex;
         flex-direction: row;
-        height: 50%;
+        height: 50%;*/
+
+        .current-weather-top-1 {
+            display: flex;
+            min-height: 100px;
+            background-color: #ecf0f1;
+            align-items: center;
+
+            .current-weather-location {
+                font-family: 'Dosis', sans-serif;
+                font-size: 3rem;
+                line-height: 3rem;
+                font-weight: 300;
+            }
+        }
+
+        .current-weather-top-2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            background-color: #2e8ece;
+        }
+
+        .current-weather-top-3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+            width: 50%;
+            background-color: #2e8ece;
+
+
+            .current-weather-temperature {
+                font-family: 'Dosis', sans-serif;
+                font-size: 3rem;
+                line-height: 3rem;
+                font-weight: 700;
+                color: #ffffff;
+            }
+
+        }
+
+
+
+
 
 
         .current-weather-icon {
-            width: 50%;
-            background-color: #3498db;
+
         }
 
-        .current-weather-temperature {
-            width: 50%;
-            background-color: #16a085;
-        }
+
     }
 
     .current-weather-bottom {
-        display: flex;
+        flex-grow: 1;
+        /*display: flex;
         flex-direction: column;
-        height: 50%;
+        height: 50%;*/
         .current-weather-text {
-            width: 100%;
-            clear: both;
-            height: 300px;
-            background-color: #ecf0f1;
+            font-family: 'Dosis', sans-serif;
+            font-size: 4.5rem;
+            line-height: 4.5rem;
+            font-weight: 700;
         }
     }
 

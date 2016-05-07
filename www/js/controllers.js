@@ -44,14 +44,8 @@ angular.module('starter.controllers', [])
       }
     }
 
-    var hueValue = 'background-color : {rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')}';
-
-    var currentWeatherBackgroundColor = angular.element(document.querySelector('#current_weather_information'));
-    //currentWeatherBackgroundColor.css('background-color',hueValue);
-    //$scope.hueValue = "rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')";
-    $scope.hueValue = 'rgb(' + Math.floor(Math.random() * 256) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256))+ ')';
-
-
+    //$scope.hueValue = 'rgb(' + Math.floor(Math.random() * 256) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256))+ ')';
+    $scope.hueValue = '#ecf0f1';
 
   })
 
