@@ -1,16 +1,17 @@
+var weatherData = null;
+
 angular.module('starter.controllers', [])
 
   .controller('DashCtrl', function ($scope, $http) {
   })
 
-  .controller('WeatherStartCtrl', function ($scope, $http) {
 
-    var weatherData; // Object
+  .controller('WeatherStartCtrl', function ($scope, $http, $timeout) {
 
-    $scope.$on("$ionicView.loaded", function () {
-
-
-    });
+    $scope.init = function () {
+      console.log("init");
+      $scope.getData();
+    };
 
     $scope.getData = function () {
       //http://api.openweathermap.org/data/2.5/weather?lat=47.3413346&lon=7.8957823&lang=de&units=metric&APPID=3f32ae699559cc963085bac1b8d45a3d
@@ -24,36 +25,36 @@ angular.module('starter.controllers', [])
         .success(function (data) {
           console.log("SUCCESS!");
           weatherData = data;
+          $scope.parseData();
         })
         .error(function (data) {
           console.log("ERROR in function getData");
         });
 
-    }
+    };
 
     $scope.parseData = function () {
+      console.log("parseData");
       if (weatherData !== undefined) {
-
         var temperature = weatherData['main']['temp'];
-        temperature = "31";
-
-
         $scope.current_weather_temp = temperature + "°";
         $scope.current_weather_location = weatherData['name'];
         //$scope.current_weather_condition = weatherData['weather'][0]['main'];
-        icon = weatherData['weather'][0]['icon'];
+        var icon = weatherData['weather'][0]['icon'];
         $scope.current_weather_icon = "http://openweathermap.org/img/w/" + icon + ".png";
         $scope.current_weather_icon_ionic = getIconAccordingTemperature(temperature);
         $scope.current_weather_text = getTextAccordingTemparature(temperature);
 
-
-        //console.log(current_weather_condition);
-        console.log(current_weather_temp + " Grad Celcius");
-        console.log("Du bist in " + current_weather_location);
+        // Necessary because AngularJS did not want to update the GUI no matter what! $apply didn't work. $digest didn't work.
+        document.getElementById('current_weather_temp').innerHTML = temperature + "°";
+        document.getElementById('current_weather_location').innerHTML = weatherData['name'];
+        document.getElementById('current_weather_icon_ionic').className = "icon " + getIconAccordingTemperature(temperature);
+        document.getElementById('current_weather_text').innerHTML = getTextAccordingTemparature(temperature);
       } else {
         console.log('Error parsing data!');
       }
-    }
+
+    };
 
     //$scope.hueValue = 'rgb(' + Math.floor(Math.random() * 256) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256))+ ')';
 
