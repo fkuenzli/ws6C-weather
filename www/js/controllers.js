@@ -1,16 +1,28 @@
 var weatherData = null;
-
+var lat = 47.3413346;
+var lon = 7.8957823;
 angular.module('starter.controllers', [])
 
   .controller('DashCtrl', function ($scope, $http) {
   })
 
+  .controller('GeoCtrl', function($scope, $cordovaGeolocation) {
 
-  .controller('WeatherStartCtrl', function ($scope, $http, $timeout) {
+  })
+
+  .controller('WeatherStartCtrl', function ($scope, $http, $timeout, $cordovaGeolocation) {
 
     $scope.init = function () {
       console.log("init");
-      $scope.getData();
+      var posOptions = {timeout: 10000, enableHighAccuracy: false};
+      $cordovaGeolocation.getCurrentPosition(posOptions).then(function (position) {
+        lat  = position.coords.latitude
+        lon = position.coords.longitude
+        console.log(lat + '   ' + lon);
+        $scope.getData();
+      }, function(err) {
+        console.log(err)
+      });
     };
 
     $scope.getData = function () {
@@ -18,8 +30,6 @@ angular.module('starter.controllers', [])
       var url = "http://api.openweathermap.org/data/2.5/weather";
       var units = "metric";
       // TODO get location of user
-      var lat = 47.3413346;
-      var lon = 7.8957823;
       var appid = "3f32ae699559cc963085bac1b8d45a3d";
       $http.get(url, {params: {"lat": lat, "lon": lon, "units": units, "APPID": appid}})
         .success(function (data) {
