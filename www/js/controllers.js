@@ -1,6 +1,21 @@
-var weatherData = null;
 var lat = 47.3413346;
 var lon = 7.8957823;
+
+var lat_zh = 47.3673;
+var lon_zh = 8.55;
+
+var lat_bs = 47.5667;
+var lon_bs = 7.6;
+
+var lat_ch = 46.84986;
+var lon_ch = 9.53287;
+
+var lat_sg = 47.417928;
+var lon_sg = 9.364397;
+
+var lat_aa = 47.3907;
+var lon_aa = 8.0459;
+
 angular.module('starter.controllers', [])
 
   .controller('DashCtrl', function ($scope, $http) {
@@ -19,32 +34,37 @@ angular.module('starter.controllers', [])
         lat  = position.coords.latitude
         lon = position.coords.longitude
         console.log(lat + '   ' + lon);
-        $scope.getData();
+
+        $scope.getData( lat, lon, $scope.parseDataFront );
+
+        $scope.getData(lat_zh, lon_zh, $scope.parseDataAndAddItem);
+
+        $scope.getData(lat_bs, lon_bs, $scope.parseDataAndAddItem);
+        $scope.getData(lat_ch, lon_ch, $scope.parseDataAndAddItem);
+        $scope.getData(lat_sg, lon_sg, $scope.parseDataAndAddItem);
+        $scope.getData(lat_aa, lon_aa, $scope.parseDataAndAddItem);
+
       }, function(err) {
         console.log(err)
       });
     };
 
-    $scope.getData = function () {
+    $scope.getData = function ( lat, lon, successFunc ) {
       //http://api.openweathermap.org/data/2.5/weather?lat=47.3413346&lon=7.8957823&lang=de&units=metric&APPID=3f32ae699559cc963085bac1b8d45a3d
       var url = "http://api.openweathermap.org/data/2.5/weather";
       var units = "metric";
-      // TODO get location of user
       var appid = "3f32ae699559cc963085bac1b8d45a3d";
       $http.get(url, {params: {"lat": lat, "lon": lon, "units": units, "APPID": appid}})
         .success(function (data) {
-          console.log("SUCCESS!");
-          weatherData = data;
-          $scope.parseData();
+          successFunc(data);
         })
         .error(function (data) {
-          console.log("ERROR in function getData");
+          console.log("ERROR in function getFrontData");
         });
-
     };
 
-    $scope.parseData = function () {
-      console.log("parseData");
+    $scope.parseDataFront = function (weatherData) {
+      console.log("parseDataFront");
       if (weatherData !== undefined) {
         var temperature = weatherData['main']['temp'];
         $scope.current_weather_temp = temperature + "°";
@@ -66,6 +86,25 @@ angular.module('starter.controllers', [])
 
     };
 
+    $scope.parseDataAndAddItem = function (weatherData) {
+      console.log("parseDataAndAddItem");
+      if (weatherData !== undefined) {
+        var temperature = weatherData['main']['temp'];
+        var weather_temp = temperature + "°";
+        var weather_location = weatherData['name'];
+        //$scope.current_weather_condition = weatherData['weather'][0]['main'];
+       // var icon = weatherData['weather'][0]['icon'];
+        //weather_icon = "http://openweathermap.org/img/w/" + icon + ".png";
+        //weather_icon_ionic = getIconAccordingTemperature(temperature);
+        //weather_text = getTextAccordingTemparature(temperature);
+
+        // Necessary because AngularJS did not want to update the GUI no matter what! $apply didn't work. $digest didn't work.
+        document.getElementById('back').innerHTML += "<div class='back-item'><span class='back-item-title'>" + weather_location + "</span><span class='back-item-temp'>"+ weather_temp +"</span></div>";
+      } else {
+        console.log('Error parsing data!');
+      }
+
+    };
     //$scope.hueValue = 'rgb(' + Math.floor(Math.random() * 256) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256))+ ')';
 
     var color = getRandomColor();

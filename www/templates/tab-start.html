@@ -1,33 +1,39 @@
 <ion-view ng-controller="WeatherStartCtrl" view-title="Start" ng-style="{'background-color':hueValue}">
-  <!--<ion-content class="padding">-->
-  <div class="current-weather">
-    <div class="current-weather-top-wrapper">
-      <div class="current-weather-top-1">
-        <div id='current_weather_location' class="current-weather-location padding">{{current_weather_location}}</div>
-      </div>
+    <!--<ion-content class="padding">-->
+    <div class="current-weather">
+        <div class="flipper">
+            <div class="front">
+                <div class="current-weather-top-wrapper">
+                    <div class="current-weather-top-1">
+                        <div id='current_weather_location' class="current-weather-location padding">{{current_weather_location}}</div>
+                    </div>
 
-      <div style="display: flex;flex-direction:row;">
-        <div class="current-weather-top-2" ng-style="{'background-color':hueValueDark}">
-          <div class="current-weather-icon">
-            <!--<img ng-src="{{current_weather_icon}}"/>-->
-            <i id='current_weather_icon_ionic' class="icon {{current_weather_icon_ionic}}"></i>
-          </div>
+                    <div style="display: flex;flex-direction:row;">
+                        <div class="current-weather-top-2" ng-style="{'background-color':hueValueDark}">
+                            <div class="current-weather-icon">
+                                <!--<img ng-src="{{current_weather_icon}}"/>-->
+                                <i id='current_weather_icon_ionic' class="icon {{current_weather_icon_ionic}}"></i>
+                            </div>
+                        </div>
+                        <div class="current-weather-top-3" ng-style="{'background-color':hueValueDark}">
+                            <div id='current_weather_temp' class="current-weather-temperature">{{current_weather_temp}}</div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="current-weather-bottom">
+                    <div class="current-weather-text"></div>
+
+                    <div id='current_weather_text' class="current-weather-text padding">{{current_weather_text}}</div>
+                    <a href="#" ng-click="getData()">Get Weather Data</a><br/>
+                    <a href="#" id="parseButton" ng-click="parseData()">ParseData</a>
+                </div>
+            </div>
+            <div id="back" class="back">
+            </div>
         </div>
-        <div class="current-weather-top-3" ng-style="{'background-color':hueValueDark}">
-          <div id='current_weather_temp' class="current-weather-temperature">{{current_weather_temp}}</div>
-        </div>
-      </div>
-
-
     </div>
-    <div class="current-weather-bottom">
-      <div class="current-weather-text"></div>
-
-      <div id='current_weather_text' class="current-weather-text padding">{{current_weather_text}}</div>
-      <a href="#" ng-click="getData()">Get Weather Data</a><br/>
-      <a href="#" id="parseButton" ng-click="parseData()">ParseData</a>
-    </div>
-  </div>
-  <div data-ng-controller="WeatherStartCtrl" data-ng-init="init()"></div>
-  <!--</ion-content>-->
+    <div data-ng-controller="WeatherStartCtrl" data-ng-init="init()"></div>
+    <!--</ion-content>-->
 </ion-view>
