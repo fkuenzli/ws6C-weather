@@ -32,6 +32,7 @@ angular.module('starter.controllers', [])
 
     $scope.init = function () {
       console.log("init");
+      startup();
       var posOptions = {timeout: 10000, enableHighAccuracy: false};
       $cordovaGeolocation.getCurrentPosition(posOptions).then(function (position) {
         lat  = position.coords.latitude
@@ -253,4 +254,21 @@ function shadeRGBColor(color, percent) {
 function shadeColor2(color, percent) {
   var f = parseInt(color.slice(1), 16), t = percent < 0 ? 0 : 255, p = percent < 0 ? percent * -1 : percent, R = f >> 16, G = f >> 8 & 0x00FF, B = f & 0x0000FF;
   return "#" + (0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
+}
+
+
+function handleTouch(evt) {
+  evt.preventDefault();
+  console.log("handleTouch");
+  var el = document.getElementsByClassName("current-weather")[0];
+  el.classList.toggle("flipback");
+}
+
+function startup() {
+  var el = document.getElementsByClassName("current-weather")[0];
+  //el.addEventListener("touchstart", handleStart, false);
+  el.addEventListener("touchend", handleTouch, false);
+  //el.addEventListener("touchcancel", handleCancel, false);
+  //el.addEventListener("touchmove", handleMove, false);
+  console.log("initialized.");
 }
