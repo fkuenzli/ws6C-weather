@@ -16,6 +16,9 @@ var lon_sg = 9.364397;
 var lat_aa = 47.3907;
 var lon_aa = 8.0459;
 
+var lat_la = 34.052235;
+var lon_la = -118.243683;
+
 angular.module('starter.controllers', [])
 
   .controller('DashCtrl', function ($scope, $http) {
@@ -38,11 +41,11 @@ angular.module('starter.controllers', [])
         $scope.getData( lat, lon, $scope.parseDataFront );
 
         $scope.getData(lat_zh, lon_zh, $scope.parseDataAndAddItem);
-
         $scope.getData(lat_bs, lon_bs, $scope.parseDataAndAddItem);
         $scope.getData(lat_ch, lon_ch, $scope.parseDataAndAddItem);
         $scope.getData(lat_sg, lon_sg, $scope.parseDataAndAddItem);
         $scope.getData(lat_aa, lon_aa, $scope.parseDataAndAddItem);
+        $scope.getData(lat_la, lon_la, $scope.parseDataAndAddItem);
 
       }, function(err) {
         console.log(err)
@@ -96,10 +99,10 @@ angular.module('starter.controllers', [])
        // var icon = weatherData['weather'][0]['icon'];
         //weather_icon = "http://openweathermap.org/img/w/" + icon + ".png";
         //weather_icon_ionic = getIconAccordingTemperature(temperature);
-        //weather_text = getTextAccordingTemparature(temperature);
+        var weather_text = getTextAccordingTemparature(temperature);
 
         // Necessary because AngularJS did not want to update the GUI no matter what! $apply didn't work. $digest didn't work.
-        document.getElementById('back').innerHTML += "<div class='back-item'><span class='back-item-title'>" + weather_location + "</span><span class='back-item-temp'>"+ weather_temp +"</span></div>";
+        document.getElementById('back').innerHTML += "<div class='back-item'><span class='back-item-title'>" + weather_location + "</span><span class='back-item-temp'>"+ weather_temp +"</span><br/><span class='back-item-text'>" + weather_text + "</span></div>";
       } else {
         console.log('Error parsing data!');
       }
