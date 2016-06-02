@@ -42,15 +42,29 @@ angular.module('starter.controllers', [])
         $scope.getData( lat, lon, $scope.parseDataFront );
 
         $scope.getData(lat_zh, lon_zh, $scope.parseDataAndAddItem);
-        $scope.getData(lat_bs, lon_bs, $scope.parseDataAndAddItem);
-        $scope.getData(lat_ch, lon_ch, $scope.parseDataAndAddItem);
-        $scope.getData(lat_sg, lon_sg, $scope.parseDataAndAddItem);
+        //$scope.getData(lat_bs, lon_bs, $scope.parseDataAndAddItem);
+        //$scope.getData(lat_ch, lon_ch, $scope.parseDataAndAddItem);
+        //$scope.getData(lat_sg, lon_sg, $scope.parseDataAndAddItem);
         $scope.getData(lat_aa, lon_aa, $scope.parseDataAndAddItem);
         $scope.getData(lat_la, lon_la, $scope.parseDataAndAddItem);
 
       }, function(err) {
         console.log(err)
       });
+    };
+
+    $scope.addTemp = function () {
+      var latUser = prompt("Please enter latitude", "46.84986");
+      if (latUser != null) {
+        latUser = "46.84986";
+      }
+      var lonUser = prompt("Please enter longitude", "9.53287");
+      if (lonUser != null) {
+        lonUser = "9.53287";
+      }
+
+      $scope.getData(Number(latUser), Number(lonUser), $scope.parseDataAndAddItem);
+
     };
 
     $scope.getData = function ( lat, lon, successFunc ) {

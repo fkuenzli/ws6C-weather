@@ -75,3 +75,12 @@
     float: left;
     clear: left;
 }
+
+.addButton {
+    font-size: 64px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    bottom: 30px;
+    right: 10px;
+}
