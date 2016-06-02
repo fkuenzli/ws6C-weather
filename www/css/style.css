@@ -46,7 +46,6 @@
 
 .back-item {
     width: 100%;
-    height: 100px;
     display: block;
 }
 
@@ -55,7 +54,10 @@
     padding-top: 30px;
     color: white;
     font-size: 32px;
+    line-height: 32px;
     float: left;
+    width: 65%;
+    overflow-x: hidden;
 }
 
 .back-item-temp {
@@ -63,8 +65,12 @@
     padding-top: 30px;
     color: white;
     font-size: 32px;
+    line-height: 32px;
     font-weight: bold;
     float: right;
+    text-align: right;
+    width: 35%;
+    overflow-x: hidden;
 }
 
 .back-item-text {

@@ -55,11 +55,11 @@ angular.module('starter.controllers', [])
 
     $scope.addTemp = function () {
       var latUser = prompt("Please enter latitude", "46.84986");
-      if (latUser != null) {
+      if (latUser == null) {
         latUser = "46.84986";
       }
       var lonUser = prompt("Please enter longitude", "9.53287");
-      if (lonUser != null) {
+      if (lonUser == null) {
         lonUser = "9.53287";
       }
 
