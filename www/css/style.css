@@ -90,3 +90,13 @@
     bottom: 30px;
     right: 10px;
 }
+
+
+.shareButton {
+    font-size: 64px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+}

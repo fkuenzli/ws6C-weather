@@ -28,7 +28,16 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('WeatherStartCtrl', function ($scope, $http, $timeout, $cordovaGeolocation) {
+  .controller('WeatherStartCtrl', function ($scope, $http, $timeout, $cordovaGeolocation, $cordovaSocialSharing) {
+
+    $scope.shareAnywhere = function() {
+      console.log("shareAnywhere called");
+      $cordovaSocialSharing.canShareVia("twitter", $scope.current_weather_text, null, "http://www.google.com").then(function(result) {
+        $cordovaSocialSharing.shareViaTwitter(message, image, link);
+      }, function(error) {
+        alert("Cannot share on Twitter");
+      });
+    }
 
     $scope.init = function () {
       console.log("init");
